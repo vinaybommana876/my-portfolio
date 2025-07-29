@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./2048Clone.css"; // see CSS below
 
 const SIZE = 4;
@@ -10,43 +10,6 @@ const initialGrid = () => {
   addRandom(grid);
   return grid;
 };
-
-// ✅ Swipe support for mobile (add this inside Game)
-useEffect(() => {
-  let touchStartX = 0;
-  let touchStartY = 0;
-
-  const handleTouchStart = (e) => {
-    const touch = e.touches[0];
-    touchStartX = touch.clientX;
-    touchStartY = touch.clientY;
-  };
-
-  const handleTouchEnd = (e) => {
-    const touch = e.changedTouches[0];
-    const dx = touch.clientX - touchStartX;
-    const dy = touch.clientY - touchStartY;
-
-    const absDx = Math.abs(dx);
-    const absDy = Math.abs(dy);
-
-    if (Math.max(absDx, absDy) > 30) {
-      if (absDx > absDy) {
-        handleMove(dx > 0 ? "right" : "left");
-      } else {
-        handleMove(dy > 0 ? "down" : "up");
-      }
-    }
-  };
-
-  window.addEventListener("touchstart", handleTouchStart, { passive: true });
-  window.addEventListener("touchend", handleTouchEnd, { passive: true });
-
-  return () => {
-    window.removeEventListener("touchstart", handleTouchStart);
-    window.removeEventListener("touchend", handleTouchEnd);
-  };
-}, [handleMove]);
 
 const getEmptyCells = (grid) =>
   grid
