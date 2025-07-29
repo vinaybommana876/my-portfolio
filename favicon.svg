@@ -1,0 +1,7 @@
+<!-- public/favicon.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="12" fill="#282c34"/>
+  <path d="M20 32L12 24V40L20 32Z" fill="#61dafb"/>
+  <path d="M44 32L52 24V40L44 32Z" fill="#61dafb"/>
+  <path d="M28 44L36 20" stroke="#61dafb" stroke-width="4" stroke-linecap="round"/>
+</svg>
