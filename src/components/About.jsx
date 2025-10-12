@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import resume_prev from "../assets/resume_prev.png";
-import resume_pdf from "../assets/VinayR11052025.pdf";
+import resume_pdf from "../assets/Resume12102025.pdf";
 import "../App.css";
 
 export default function About({ theme }) {
